@@ -10,3 +10,14 @@ C:\Users\Helen\Desktop\Jiangren\LMS\Model\obj\Debug\Model.csproj.CoreCompileInpu
 C:\Users\Helen\Desktop\Jiangren\LMS\Model\obj\Debug\Model.csproj.CopyComplete
 C:\Users\Helen\Desktop\Jiangren\LMS\Model\obj\Debug\Model.dll
 C:\Users\Helen\Desktop\Jiangren\LMS\Model\obj\Debug\Model.pdb
+C:\Users\Helen\Desktop\New folder\lms\Model\bin\Debug\Model.dll.config
+C:\Users\Helen\Desktop\New folder\lms\Model\bin\Debug\Model.dll
+C:\Users\Helen\Desktop\New folder\lms\Model\bin\Debug\Model.pdb
+C:\Users\Helen\Desktop\New folder\lms\Model\bin\Debug\EntityFramework.dll
+C:\Users\Helen\Desktop\New folder\lms\Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Helen\Desktop\New folder\lms\Model\bin\Debug\EntityFramework.xml
+C:\Users\Helen\Desktop\New folder\lms\Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Helen\Desktop\New folder\lms\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\Helen\Desktop\New folder\lms\Model\obj\Debug\Model.csproj.CopyComplete
+C:\Users\Helen\Desktop\New folder\lms\Model\obj\Debug\Model.dll
+C:\Users\Helen\Desktop\New folder\lms\Model\obj\Debug\Model.pdb

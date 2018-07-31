@@ -12,23 +12,20 @@ namespace Model.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Course
+    public partial class Lecturer
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Course()
+        public Lecturer()
         {
-            this.StudentCourses = new HashSet<StudentCourse>();
             this.LecturerCourses = new HashSet<LecturerCourse>();
         }
     
         public int Id { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public decimal Fee { get; set; }
-        public int MaxStudent { get; set; }
+        public string Name { get; set; }
+        public string StaffNumber { get; set; }
+        public string Email { get; set; }
+        public string Bibliography { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<StudentCourse> StudentCourses { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LecturerCourse> LecturerCourses { get; set; }
     }

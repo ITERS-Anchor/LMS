@@ -55,6 +55,12 @@
     <Compile Include="Model\Course.cs">
       <DependentUpon>LMSModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\Lecturer.cs">
+      <DependentUpon>LMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LecturerCourse.cs">
+      <DependentUpon>LMSModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\LMSModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
