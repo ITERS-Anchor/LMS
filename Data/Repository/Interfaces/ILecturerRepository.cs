@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Data.Repository.Interfaces
 {
-    interface ILectureRepository:IGenericRepository<Lecturer>
+    public interface ILecturerRepository:IGenericRepository<Lecturer>
     {
 
     }

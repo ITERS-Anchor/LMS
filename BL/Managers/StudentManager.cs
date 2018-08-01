@@ -65,18 +65,16 @@ namespace BL.Managers
             Student s = _studentRepository.GetById(id);
             _studentRepository.Delete(s);
             return true;
-        }
-       
-       
+        }           
 
         IEnumerable<Student> IGenericManager<Student>.GetAll()
         {
-            throw new NotImplementedException();
+            return _studentRepository.Records.ToList();
         }
 
         Student IGenericManager<Student>.GetById(int id)
         {
-            throw new NotImplementedException();
+            return _studentRepository.GetById(id);
         }
     }
 

@@ -49,7 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dto\CourseDto.cs" />
-    <Compile Include="Dto\LectureDto.cs" />
+    <Compile Include="Dto\LecturerDto.cs" />
     <Compile Include="Dto\StudentDto.cs" />
     <Compile Include="Dto\StudentSearchDto.cs" />
     <Compile Include="Dto\UserDisplayDto.cs" />

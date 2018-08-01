@@ -28,10 +28,31 @@ namespace LMS.Controllers
         }
 
         [HttpPost]
-        [Route("api/courses/creatcourse")]
-        public IHttpActionResult Post(CourseDto student)
+        [Route("api/courses/createcourse")]
+        public IHttpActionResult Post(CourseDto course)
         {
-            return Ok(_courseManager.Create(student));
+            return Ok(_courseManager.Create(course));
+        }
+
+        [HttpPut]
+        [Route("api/courses/updatecourse")]
+        public IHttpActionResult Put(CourseDto c)
+        {
+            _courseManager.Update(c);
+            return Ok($"Update Course Id:{c.Id} is sucessful!");
+        }
+
+        [HttpDelete]
+        public IHttpActionResult Delete(int id)
+        {
+            if (_courseManager.Delete(id))
+            {
+                return Ok($"The course with Id:{id} is deleted!");
+            }
+            else
+            {
+                return BadRequest();
+            }
         }
     }
 }

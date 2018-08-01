@@ -27,7 +27,8 @@ namespace BL.Managers
 
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            _courseRepository.Delete(_courseRepository.GetById(id));
+            return true;
         }
 
         public IEnumerable<CourseDto> GetAll()
@@ -40,9 +41,10 @@ namespace BL.Managers
             return Mapper.Map<Course, CourseDto>(_courseRepository.GetById(id));
         }
 
-        public CourseDto Update(CourseDto entity)
+        public CourseDto Update(CourseDto course)
         {
-            throw new NotImplementedException();
+            _courseRepository.Update(Mapper.Map<CourseDto, Course>(course));
+            return Mapper.Map<Course, CourseDto>(_courseRepository.GetById(course.Id));
         }
     }
 }

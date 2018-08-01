@@ -73,8 +73,10 @@
     <Compile Include="Managers\Interfaces\IAuthManager.cs" />
     <Compile Include="Managers\Interfaces\ICourseManager.cs" />
     <Compile Include="Managers\Interfaces\IGenericManager.cs" />
+    <Compile Include="Managers\Interfaces\ILecturerManager.cs" />
     <Compile Include="Managers\Interfaces\IStudentManager.cs" />
     <Compile Include="Managers\Interfaces\IUserManager.cs" />
+    <Compile Include="Managers\LecturerManager.cs" />
     <Compile Include="Managers\SearchAttribute.cs" />
     <Compile Include="Managers\StudentManager.cs" />
     <Compile Include="Managers\TestManager.cs" />

@@ -45,7 +45,7 @@ namespace LMS.Controllers
         //}
 
         [HttpPost]
-        [Route("api/students/creatstudent")]
+        [Route("api/students/createstudent")]
         public IHttpActionResult Post(Student student)
         {
             return Ok(_studentManager.Create(student));
@@ -54,7 +54,8 @@ namespace LMS.Controllers
         [Route("api/students/updatestudent")]
         public IHttpActionResult Put(Student student)
         {
-            return Ok(_studentManager .Update(student));
+            _studentManager.Update(student);
+            return Ok($"Update Id:{student.Id} is sucessful!");
         }
         [HttpDelete]
         

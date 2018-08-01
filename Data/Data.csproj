@@ -82,12 +82,12 @@
     <Compile Include="Repository\Interfaces\IAuthRepository.cs" />
     <Compile Include="Repository\Interfaces\ICourseRepository.cs" />
     <Compile Include="Repository\Interfaces\IGenericRepository.cs" />
-    <Compile Include="Repository\Interfaces\ILectureRepository.cs" />
+    <Compile Include="Repository\Interfaces\ILecturerRepository.cs" />
     <Compile Include="Repository\Interfaces\IStudentCourseRepository.cs" />
     <Compile Include="Repository\Interfaces\IStudentRepository.cs" />
     <Compile Include="Repository\Interfaces\IUserRepository.cs" />
     <Compile Include="Repository\LectureCourseRepository.cs" />
-    <Compile Include="Repository\LectureRepository.cs" />
+    <Compile Include="Repository\LecturerRepository.cs" />
     <Compile Include="Repository\StudentCourseRepository.cs" />
     <Compile Include="Repository\StudentRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
