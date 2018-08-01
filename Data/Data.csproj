@@ -76,19 +76,24 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositoryCompositionRoot.cs" />
+    <Compile Include="Repository\AuthRepository.cs" />
     <Compile Include="Repository\CourseRepository.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
+    <Compile Include="Repository\Interfaces\IAuthRepository.cs" />
     <Compile Include="Repository\Interfaces\ICourseRepository.cs" />
     <Compile Include="Repository\Interfaces\IGenericRepository.cs" />
+    <Compile Include="Repository\Interfaces\ILectureRepository.cs" />
+    <Compile Include="Repository\Interfaces\IStudentCourseRepository.cs" />
     <Compile Include="Repository\Interfaces\IStudentRepository.cs" />
     <Compile Include="Repository\Interfaces\IUserRepository.cs" />
+    <Compile Include="Repository\LectureCourseRepository.cs" />
+    <Compile Include="Repository\LectureRepository.cs" />
+    <Compile Include="Repository\StudentCourseRepository.cs" />
     <Compile Include="Repository\StudentRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="App.config" />
     <EntityDeploy Include="Database\LMSModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>LMSModel.Designer.cs</LastGenOutput>
@@ -99,6 +104,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Database\LMSModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LMSModel.edmx</DependentUpon>
+      <LastGenOutput>LMSModel.Context.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
@@ -106,14 +118,6 @@
       <Project>{bedfd7d6-9037-4cee-af82-a0a5c94f454d}</Project>
       <Name>Model</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Content Include="Database\LMSModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>LMSModel.edmx</DependentUpon>
-      <LastGenOutput>LMSModel.Context.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

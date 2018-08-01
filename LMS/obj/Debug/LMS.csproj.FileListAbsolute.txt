@@ -141,6 +141,13 @@ C:\Users\Helen\Desktop\Jiangren\LMS\LMS\bin\Autofac.dll
 C:\Users\Helen\Desktop\Jiangren\LMS\LMS\bin\Autofac.Integration.WebApi.dll
 C:\Users\Helen\Desktop\Jiangren\LMS\LMS\bin\Autofac.xml
 C:\Users\Helen\Desktop\Jiangren\LMS\LMS\bin\Autofac.Integration.WebApi.xml
+C:\Users\Helen\Desktop\Jiangren\LMS\LMS\bin\System.Web.Cors.dll
+C:\Users\Helen\Desktop\Jiangren\LMS\LMS\bin\System.Web.Http.Cors.dll
+C:\Users\Helen\Desktop\Jiangren\LMS\LMS\bin\System.Web.Http.Cors.xml
+C:\Users\Helen\Desktop\New folder\lms\LMS\obj\Debug\LMS.csprojResolveAssemblyReference.cache
+C:\Users\Helen\Desktop\New folder\lms\LMS\obj\Debug\LMS.csproj.CoreCompileInputs.cache
+C:\Users\Helen\Desktop\New folder\lms\LMS\obj\Debug\LMS.dll
+C:\Users\Helen\Desktop\New folder\lms\LMS\obj\Debug\LMS.pdb
 C:\Users\Helen\Desktop\New folder\lms\LMS\bin\ApplicationInsights.config
 C:\Users\Helen\Desktop\New folder\lms\LMS\bin\LMS.dll.config
 C:\Users\Helen\Desktop\New folder\lms\LMS\bin\LMS.dll
@@ -226,7 +233,9 @@ C:\Users\Helen\Desktop\New folder\lms\LMS\bin\Model.dll
 C:\Users\Helen\Desktop\New folder\lms\LMS\bin\Newtonsoft.Json.dll
 C:\Users\Helen\Desktop\New folder\lms\LMS\bin\Owin.dll
 C:\Users\Helen\Desktop\New folder\lms\LMS\bin\System.Net.Http.Formatting.dll
+C:\Users\Helen\Desktop\New folder\lms\LMS\bin\System.Web.Cors.dll
 C:\Users\Helen\Desktop\New folder\lms\LMS\bin\System.Web.Helpers.dll
+C:\Users\Helen\Desktop\New folder\lms\LMS\bin\System.Web.Http.Cors.dll
 C:\Users\Helen\Desktop\New folder\lms\LMS\bin\System.Web.Http.dll
 C:\Users\Helen\Desktop\New folder\lms\LMS\bin\System.Web.Http.Owin.dll
 C:\Users\Helen\Desktop\New folder\lms\LMS\bin\System.Web.Http.WebHost.dll
@@ -249,10 +258,11 @@ C:\Users\Helen\Desktop\New folder\lms\LMS\bin\AutoMapper.xml
 C:\Users\Helen\Desktop\New folder\lms\LMS\bin\EntityFramework.xml
 C:\Users\Helen\Desktop\New folder\lms\LMS\bin\EntityFramework.SqlServer.xml
 C:\Users\Helen\Desktop\New folder\lms\LMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Helen\Desktop\New folder\lms\LMS\bin\Newtonsoft.Json.xml
 C:\Users\Helen\Desktop\New folder\lms\LMS\bin\System.Net.Http.Formatting.xml
-C:\Users\Helen\Desktop\New folder\lms\LMS\bin\System.Web.Helpers.xml
 C:\Users\Helen\Desktop\New folder\lms\LMS\bin\System.Web.Http.xml
+C:\Users\Helen\Desktop\New folder\lms\LMS\bin\System.Web.Http.Cors.xml
+C:\Users\Helen\Desktop\New folder\lms\LMS\bin\Newtonsoft.Json.xml
+C:\Users\Helen\Desktop\New folder\lms\LMS\bin\System.Web.Helpers.xml
 C:\Users\Helen\Desktop\New folder\lms\LMS\bin\System.Web.Http.WebHost.xml
 C:\Users\Helen\Desktop\New folder\lms\LMS\bin\System.Web.Mvc.xml
 C:\Users\Helen\Desktop\New folder\lms\LMS\bin\System.Web.Optimization.xml
@@ -279,8 +289,4 @@ C:\Users\Helen\Desktop\New folder\lms\LMS\bin\Microsoft.AI.DependencyCollector.x
 C:\Users\Helen\Desktop\New folder\lms\LMS\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\Helen\Desktop\New folder\lms\LMS\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\Helen\Desktop\New folder\lms\LMS\bin\Microsoft.AI.Web.xml
-C:\Users\Helen\Desktop\New folder\lms\LMS\obj\Debug\LMS.csprojResolveAssemblyReference.cache
-C:\Users\Helen\Desktop\New folder\lms\LMS\obj\Debug\LMS.csproj.CoreCompileInputs.cache
 C:\Users\Helen\Desktop\New folder\lms\LMS\obj\Debug\LMS.csproj.CopyComplete
-C:\Users\Helen\Desktop\New folder\lms\LMS\obj\Debug\LMS.dll
-C:\Users\Helen\Desktop\New folder\lms\LMS\obj\Debug\LMS.pdb

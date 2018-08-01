@@ -5,6 +5,7 @@ using Data.Repository.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,13 +15,13 @@ namespace Data
     {
         public static void RegisterTypes(ContainerBuilder builder)
         {
-            //var currentAssembly = Assembly.GetExecutingAssembly();
+            var currentAssembly = Assembly.GetExecutingAssembly();
 
-            //builder.RegisterAssemblyTypes(currentAssembly)
-            //    .Where(t => t.Name.EndsWith("Repository"))
-            //    .AsImplementedInterfaces();
+            builder.RegisterAssemblyTypes(currentAssembly)
+                .Where(t => t.Name.EndsWith("Repository"))
+                .AsImplementedInterfaces();
             builder.RegisterType<LMSEntities>().AsSelf().InstancePerRequest();
-            builder.RegisterType<UserRepository>().As<IUserRepository>().InstancePerRequest();
+            //builder.RegisterType<UserRepository>().As<IUserRepository>().InstancePerRequest();
 
         }
     }

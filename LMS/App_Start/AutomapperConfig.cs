@@ -15,7 +15,10 @@ namespace LMS.App_Start
             Mapper.Initialize(config =>
             {
                 config.CreateMap<Student, StudentDto>();
+                config.CreateMap<StudentDto, Student>();
                 config.CreateMap<User, UserDisplayDto>();
+                config.CreateMap<Course, CourseDto>();
+                config.CreateMap<CourseDto, Course>();
             });
         }
     }

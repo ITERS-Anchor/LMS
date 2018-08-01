@@ -8,11 +8,15 @@ using System.Threading.Tasks;
 
 namespace BL.Managers.Interfaces
 {
-    public interface IStudentManager
+    public interface IStudentManager:IGenericManager<Student>
     {
-        Student CreateStudent(Student student);
+        IEnumerable<StudentDto> GetAll();
 
-        StudentDto GetStudentById(int id);
+        StudentDto GetById(int id);
+       
+        //void AddToCourse(int sid, int cid);
+        //StudentSearchDto SearchStudent(SearchAttribute search);
+
     }
 
 }

@@ -9,29 +9,8 @@
     <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Fee" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
     <Property Name="MaxStudent" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="LecturerCourses" Relationship="Self.FK_LectureCourse_Course" FromRole="Course" ToRole="LecturerCourse" />
     <NavigationProperty Name="StudentCourses" Relationship="Self.FK_StudentCourse_Course" FromRole="Course" ToRole="StudentCourse" />
-  </EntityType>
-  <EntityType Name="Lecturer">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="StaffNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Bibliography" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="LecturerCourses" Relationship="Self.FK_LectureCourse_Lecture" FromRole="Lecturer" ToRole="LecturerCourse" />
-  </EntityType>
-  <EntityType Name="LecturerCourse">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="LecturerId" Type="Int32" Nullable="false" />
-    <Property Name="CourseId" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Course" Relationship="Self.FK_LectureCourse_Course" FromRole="LecturerCourse" ToRole="Course" />
-    <NavigationProperty Name="Lecturer" Relationship="Self.FK_LectureCourse_Lecture" FromRole="LecturerCourse" ToRole="Lecturer" />
+    <NavigationProperty Name="LecturerCourses" Relationship="LMSModel.FK_LectureCourse_Course" FromRole="Course" ToRole="LecturerCourse" />
   </EntityType>
   <EntityType Name="Student">
     <Key>
@@ -68,18 +47,6 @@
     <Property Name="PasswordHash" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
   </EntityType>
-  <Association Name="FK_LectureCourse_Course">
-    <End Role="Course" Type="Self.Course" Multiplicity="1" />
-    <End Role="LecturerCourse" Type="Self.LecturerCourse" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Course">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="LecturerCourse">
-        <PropertyRef Name="CourseId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_StudentCourse_Course">
     <End Role="Course" Type="Self.Course" Multiplicity="1" />
     <End Role="StudentCourse" Type="Self.StudentCourse" Multiplicity="*" />
@@ -89,18 +56,6 @@
       </Principal>
       <Dependent Role="StudentCourse">
         <PropertyRef Name="CourseId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_LectureCourse_Lecture">
-    <End Role="Lecturer" Type="Self.Lecturer" Multiplicity="1" />
-    <End Role="LecturerCourse" Type="Self.LecturerCourse" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Lecturer">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="LecturerCourse">
-        <PropertyRef Name="LecturerId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -118,26 +73,71 @@
   </Association>
   <EntityContainer Name="LMSEntities" annotation:LazyLoadingEnabled="false">
     <EntitySet Name="Courses" EntityType="Self.Course" />
-    <EntitySet Name="Lecturers" EntityType="Self.Lecturer" />
-    <EntitySet Name="LecturerCourses" EntityType="Self.LecturerCourse" />
     <EntitySet Name="Students" EntityType="Self.Student" />
     <EntitySet Name="StudentCourses" EntityType="Self.StudentCourse" />
     <EntitySet Name="Users" EntityType="Self.User" />
-    <AssociationSet Name="FK_LectureCourse_Course" Association="Self.FK_LectureCourse_Course">
-      <End Role="Course" EntitySet="Courses" />
-      <End Role="LecturerCourse" EntitySet="LecturerCourses" />
-    </AssociationSet>
     <AssociationSet Name="FK_StudentCourse_Course" Association="Self.FK_StudentCourse_Course">
       <End Role="Course" EntitySet="Courses" />
       <End Role="StudentCourse" EntitySet="StudentCourses" />
-    </AssociationSet>
-    <AssociationSet Name="FK_LectureCourse_Lecture" Association="Self.FK_LectureCourse_Lecture">
-      <End Role="Lecturer" EntitySet="Lecturers" />
-      <End Role="LecturerCourse" EntitySet="LecturerCourses" />
     </AssociationSet>
     <AssociationSet Name="FK_StudentCourse_Student" Association="Self.FK_StudentCourse_Student">
       <End Role="Student" EntitySet="Students" />
       <End Role="StudentCourse" EntitySet="StudentCourses" />
     </AssociationSet>
+    <EntitySet Name="Lecturers" EntityType="LMSModel.Lecturer" />
+    <EntitySet Name="LecturerCourses" EntityType="LMSModel.LecturerCourse" />
+    <AssociationSet Name="FK_LectureCourse_Course" Association="LMSModel.FK_LectureCourse_Course">
+      <End Role="Course" EntitySet="Courses" />
+      <End Role="LecturerCourse" EntitySet="LecturerCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LectureCourse_Lecture" Association="LMSModel.FK_LectureCourse_Lecture">
+      <End Role="Lecturer" EntitySet="Lecturers" />
+      <End Role="LecturerCourse" EntitySet="LecturerCourses" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Lecturer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="StaffNumber" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Bibliography" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="LecturerCourses" Relationship="LMSModel.FK_LectureCourse_Lecture" FromRole="Lecturer" ToRole="LecturerCourse" />
+  </EntityType>
+  <EntityType Name="LecturerCourse">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LecturerId" Type="Int32" Nullable="false" />
+    <Property Name="CourseId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Course" Relationship="LMSModel.FK_LectureCourse_Course" FromRole="LecturerCourse" ToRole="Course" />
+    <NavigationProperty Name="Lecturer" Relationship="LMSModel.FK_LectureCourse_Lecture" FromRole="LecturerCourse" ToRole="Lecturer" />
+  </EntityType>
+  <Association Name="FK_LectureCourse_Course">
+    <End Type="LMSModel.Course" Role="Course" Multiplicity="1" />
+    <End Type="LMSModel.LecturerCourse" Role="LecturerCourse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LecturerCourse">
+        <PropertyRef Name="CourseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LectureCourse_Lecture">
+    <End Type="LMSModel.Lecturer" Role="Lecturer" Multiplicity="1" />
+    <End Type="LMSModel.LecturerCourse" Role="LecturerCourse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lecturer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LecturerCourse">
+        <PropertyRef Name="LecturerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

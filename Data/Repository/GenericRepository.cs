@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Data.Repository
 {
-    public class GenericRepository<T> : IGenericRepository<T> where T : class
+    public abstract class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         protected LMSEntities _context;
         public DbSet<T> Records

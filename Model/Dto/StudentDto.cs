@@ -15,6 +15,8 @@ namespace Model.Dto
         public Nullable<System.DateTime> DateOfBirth { get; set; }
         public string Email { get; set; }
         public Nullable<decimal> Credit { get; set; }
+        public List<CourseDto> Courses { get; set; }
+
     }
 
 }

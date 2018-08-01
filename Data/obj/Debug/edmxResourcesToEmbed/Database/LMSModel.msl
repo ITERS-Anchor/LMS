@@ -12,26 +12,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Lecturers">
-      <EntityTypeMapping TypeName="LMSModel.Lecturer">
-        <MappingFragment StoreEntitySet="Lecturer">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="StaffNumber" ColumnName="StaffNumber" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Bibliography" ColumnName="Bibliography" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="LecturerCourses">
-      <EntityTypeMapping TypeName="LMSModel.LecturerCourse">
-        <MappingFragment StoreEntitySet="LecturerCourse">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="LecturerId" ColumnName="LecturerId" />
-          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Students">
       <EntityTypeMapping TypeName="LMSModel.Student">
         <MappingFragment StoreEntitySet="Student">
@@ -64,6 +44,26 @@
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
           <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lecturers">
+      <EntityTypeMapping TypeName="LMSModel.Lecturer">
+        <MappingFragment StoreEntitySet="Lecturer">
+          <ScalarProperty Name="Bibliography" ColumnName="Bibliography" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="StaffNumber" ColumnName="StaffNumber" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LecturerCourses">
+      <EntityTypeMapping TypeName="LMSModel.LecturerCourse">
+        <MappingFragment StoreEntitySet="LecturerCourse">
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+          <ScalarProperty Name="LecturerId" ColumnName="LecturerId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
