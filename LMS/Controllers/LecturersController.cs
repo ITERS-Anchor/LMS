@@ -28,14 +28,14 @@ namespace LMS.Controllers
         }
 
         [HttpPost]
-        [Route("api/lectures/createlecturer")]
+        [Route("api/lecturers/createlecturer")]
         public IHttpActionResult Post(Lecturer l)
         {
             return Ok(_lecturerManager.Create(l));
         }
 
         [HttpPut]
-        [Route("api/lectures/updatelecture")]
+        [Route("api/lecturers/updatelecture")]
         public IHttpActionResult Put(Lecturer c)
         {
             _lecturerManager.Update(c);

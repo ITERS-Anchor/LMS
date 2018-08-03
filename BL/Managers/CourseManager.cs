@@ -21,7 +21,7 @@ namespace BL.Managers
 
         public CourseDto Create(CourseDto course)
         {
-            _courseRepository.Add(AutoMapper.Mapper.Map<CourseDto, Course>(course));
+            _courseRepository.Add(Mapper.Map<CourseDto, Course>(course));
             return course;
         }
 

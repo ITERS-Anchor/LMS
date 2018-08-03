@@ -13,7 +13,9 @@ namespace Data.Repository
     {
         public StudentRepository(LMSEntities context) : base(context)
         {
-
+            //Context = context;
         }
+
+        public LMSEntities Context => _context;
     }
 }

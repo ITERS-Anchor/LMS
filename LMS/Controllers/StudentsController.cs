@@ -28,21 +28,22 @@ namespace LMS.Controllers
         {
             return Ok(_studentManager.GetById(id));
         }
-        //[HttpGet]
-        //[Route("api/students/search")]
-        //public IHttpActionResult Get(string sortString="id",string sortOrder="asc",string searchValue="",int pageSize=10,int pageNumber=1)//asc
-        //{
-        //    SearchAttribute searchCondition = new SearchAttribute()
-        //    {
-        //        SearchValue = searchValue,
-        //        SortOrder=sortOrder,
-        //        SortString=sortString,
-        //        PageNumber=pageNumber,
-        //        PageSize=pageSize
-        //    };
-        //    StudentSearchDto students = _studentManager.SearchStudent(searchCondition);
-        //    return Ok(students);
-        //}
+
+        [HttpGet]
+        [Route("api/students/search")]
+        public IHttpActionResult Get(string sortString = "id", string sortOrder = "asc", string searchValue = "", int pageSize = 10, int pageNumber = 1)//asc
+        {
+            SearchAttribute searchCondition = new SearchAttribute()
+            {
+                SearchValue = searchValue,
+                SortOrder = sortOrder,
+                SortString = sortString,
+                PageNumber = pageNumber,
+                PageSize = pageSize
+            };
+            StudentSearchDto students = _studentManager.SearchStudents(searchCondition);
+            return Ok(students);
+        }
 
         [HttpPost]
         [Route("api/students/createstudent")]

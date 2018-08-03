@@ -10,12 +10,15 @@ namespace BL.Managers.Interfaces
 {
     public interface IStudentManager:IGenericManager<Student>
     {
-        IEnumerable<StudentDto> GetAll();
+        new IEnumerable<StudentDto> GetAll();
 
-        StudentDto GetById(int id);
-       
-        //void AddToCourse(int sid, int cid);
-        //StudentSearchDto SearchStudent(SearchAttribute search);
+        new StudentDto GetById(int id);
+
+        StudentSearchDto SearchStudents(SearchAttribute value);
+
+        void EnrollCourse(int sid, int cid);
+
+        void CancleCourse(int sid, int cid);
 
     }
 

@@ -17,6 +17,8 @@ namespace LMS.Controllers
             _courseManager = courseManager;
         }
 
+        [HttpGet]
+        [Route("api/courses")]
         public IHttpActionResult Get()
         {
             return Ok(_courseManager.GetAll());
