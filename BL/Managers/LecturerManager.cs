@@ -15,9 +15,15 @@ namespace BL.Managers
     {
         private ILecturerRepository _lecturerRepository;
 
-        public LecturerManager(ILecturerRepository LecturerRepository)
+        private ILecturerCourseRepository _lecturerCourseRepository;
+
+        private ICourseRepository _courseRepository;
+
+        public LecturerManager(ILecturerRepository lecturerRepository, ILecturerCourseRepository lecturerCourseRepository, ICourseRepository courseRepository)
         {
-            _lecturerRepository = LecturerRepository;
+            _lecturerRepository = lecturerRepository;
+            _lecturerCourseRepository = lecturerCourseRepository;
+            _courseRepository = courseRepository;
         }
 
         public Lecturer Create(Lecturer lecturer)
@@ -41,6 +47,40 @@ namespace BL.Managers
         public LecturerDto GetById(int id)
         {
             return (Mapper.Map<Lecturer, LecturerDto>(_lecturerRepository.GetById(id)));
+        }
+
+
+        public LecturerDto GetByIdWithDetails(int id)
+        {
+            LecturerDto lecturer = Mapper.Map<Lecturer, LecturerDto>(_lecturerRepository.GetById(id));
+            var query = from c in _courseRepository.Records
+                        join lc in _lecturerCourseRepository.Records
+                        on c.Id equals lc.CourseId
+                        where lc.LecturerId == id
+                        select c;
+            lecturer.Courses = Mapper.Map <List<Course>, List<CourseDto>>(query.ToList());
+            return lecturer;
+        }
+
+        public void TeachCourse(int lecturerId, int courseId)
+        {
+            if (!_lecturerCourseRepository.Records.Any(x=>x.CourseId==courseId && x.LecturerId==lecturerId))
+            {
+                _lecturerCourseRepository.Add(new LecturerCourse
+                {
+                    LecturerId = lecturerId,
+                    CourseId = courseId
+                });
+            }                       
+        }
+
+        public void UnteachCourse(int lecturerId, int courseId)
+        {
+            var lc = _lecturerCourseRepository.Records.FirstOrDefault(x => x.LecturerId == lecturerId && x.CourseId == courseId);
+            if (lc!=null)
+            {
+                _lecturerCourseRepository.Delete(lc);
+            }
         }
 
         public Lecturer Update(Lecturer entity)

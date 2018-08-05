@@ -17,16 +17,6 @@ namespace Data.Repository
 
         }
 
-        public void AddStuToCourse(Student s, Course c)
-        {
-            StudentCourse sc = new StudentCourse();
-            sc.CourseId = c.Id;
-            sc.StudentId = s.Id;
-            sc.Course = c;
-            sc.Student = s;
-            Records.Add(sc);
-            _context.SaveChanges();
-        }
         //public void AddStuToCourse(Student s, Course c)
         //{
         //    StudentCourse sc = new StudentCourse();
@@ -37,5 +27,6 @@ namespace Data.Repository
         //    Records.Add(sc);
         //    _context.SaveChanges();
         //}
+        
     }
 }

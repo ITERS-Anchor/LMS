@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace Data.Repository.Interfaces
 {
-   public interface IStudentCourseRepository:IGenericRepository<StudentCourse>
+    public interface ILecturerCourseRepository:IGenericRepository<LecturerCourse>
     {
-        // void AddStuToCourse(Student s, Course c);
 
     }
 }

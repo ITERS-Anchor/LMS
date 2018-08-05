@@ -14,11 +14,13 @@ namespace BL.Managers.Interfaces
 
         new StudentDto GetById(int id);
 
+        StudentDto GetByIdWithDetail(int id);
+
         StudentSearchDto SearchStudents(SearchAttribute value);
 
         void EnrollCourse(int sid, int cid);
 
-        void CancleCourse(int sid, int cid);
+        void DropCourse(int sid, int cid);
 
     }
 

@@ -49,6 +49,19 @@ namespace BL.Managers
         {           
             return Mapper.Map<Student,StudentDto>(_studentRepository.GetById(id));
         }
+
+        //Get student with course info
+        public StudentDto GetByIdWithDetail(int id)
+        {
+            var studentDto = Mapper.Map<Student, StudentDto>(_studentRepository.GetById(id));
+            var query = from c in _studentRepository.Context.Courses
+                        join sc in _studentRepository.Context.StudentCourses on c.Id equals sc.CourseId
+                        where sc.StudentId == id
+                        select c;
+            studentDto.Courses = Mapper.Map<List<Course>, List<CourseDto>>(query.ToList());
+            return studentDto;
+        }
+
         // Edit student info
         public Student Update(Student stu)
         {
@@ -122,7 +135,7 @@ namespace BL.Managers
            
         }
 
-        public void CancleCourse(int sid, int cid)
+        public void DropCourse(int sid, int cid)
         {
             var studentCourse = _studentRepository.Context.StudentCourses.FirstOrDefault(x => x.StudentId == sid && x.CourseId == cid);
             if (studentCourse != null)

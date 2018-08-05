@@ -58,8 +58,8 @@ namespace LMS.Controllers
             _studentManager.Update(student);
             return Ok($"Update Id:{student.Id} is sucessful!");
         }
-        [HttpDelete]
-        
+
+        [HttpDelete]        
         public IHttpActionResult Delete(int id)
         {
             if (_studentManager.Delete(id))
@@ -71,12 +71,29 @@ namespace LMS.Controllers
                 return BadRequest();
             }         
         }
-        //[HttpPost]
-        //[Route("api/students/addToCourse")]
-        //public IHttpActionResult AddToCourse(int sid, int cid)
-        //{
-        //    _studentManager.AddToCourse(sid,cid);
-        //    return Ok();
-        //}
+
+        [HttpPost]
+        [Route("api/students/enrollCourse")]
+        public IHttpActionResult EnrollCourse(int sid, int cid)
+        {
+            _studentManager.EnrollCourse(sid, cid);
+            return Ok();
+        }
+
+        [HttpDelete]
+        [Route("api/students/dropCourse")]
+        public IHttpActionResult DropCourse(int sid, int cid)
+        {
+            _studentManager.DropCourse(sid, cid);
+            return Ok();
+        }
+
+        [HttpGet]
+        [Route("api/students/getwithDetails")]
+        public IHttpActionResult GetWithDetails(int id)
+        {
+            _studentManager.GetByIdWithDetail(id);
+            return Ok();
+        }
     }
 }

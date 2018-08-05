@@ -13,5 +13,11 @@ namespace BL.Managers.Interfaces
          new IEnumerable<LecturerDto> GetAll();
 
          new LecturerDto GetById(int id);
+
+        LecturerDto GetByIdWithDetails(int id);
+
+        void TeachCourse(int lecturerId,int courseId);
+        void UnteachCourse(int lecturerId, int courseId);
+
     }
 }

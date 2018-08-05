@@ -13,5 +13,7 @@ namespace Model.Dto
         public string StaffNumber { get; set; }
         public string Email { get; set; }
         public string Bibliography { get; set; }
+        public List<CourseDto> Courses { get; set; }
+
     }
 }

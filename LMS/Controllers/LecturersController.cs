@@ -54,5 +54,29 @@ namespace LMS.Controllers
                 return BadRequest();
             }
         }
+
+        [HttpPost]
+        [Route("api/lecturers/teachCourse")]
+        public IHttpActionResult TeachCourse(int lecturerId,int courseId)
+        {
+            _lecturerManager.TeachCourse(lecturerId, courseId);
+            return Ok();
+        }
+
+        [HttpDelete]
+        [Route("api/lecturers/unteachCourse")]
+        public IHttpActionResult UnteachCourse(int lecturerId, int courseId)
+        {
+            _lecturerManager.UnteachCourse(lecturerId, courseId);
+            return Ok();
+        }
+
+        [HttpGet]
+        [Route("api/lecturers/getwithDetails")]
+        public IHttpActionResult GetWithDetails(int id)
+        {
+            _lecturerManager.GetByIdWithDetails(id);
+            return Ok();
+        }
     }
 }
