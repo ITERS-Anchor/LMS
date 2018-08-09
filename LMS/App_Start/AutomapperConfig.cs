@@ -19,6 +19,8 @@ namespace LMS.App_Start
                 config.CreateMap<User, UserDisplayDto>();
                 config.CreateMap<Course, CourseDto>();
                 config.CreateMap<CourseDto, Course>();
+                config.CreateMap<Lecturer, LecturerDto>();
+                config.CreateMap<LecturerDto, Lecturer>();
             });
         }
     }

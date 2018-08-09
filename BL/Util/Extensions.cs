@@ -15,9 +15,9 @@ namespace BL.Util
             {
                 return students;
             }
-            return students.Where(x => x.FirstName.Contains(searchValue)
-                                  || x.LastName.Contains(searchValue)
-                                  || x.Email.Contains(searchValue));
+            return students.Where(x => x.FirstName.ToLower().Contains(searchValue.ToLower())
+                                  || x.LastName.ToLower().Contains(searchValue.ToLower())
+                                  || x.Email.ToLower().Contains(searchValue.ToLower()));
 
         }
 

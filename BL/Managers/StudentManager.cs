@@ -96,6 +96,7 @@ namespace BL.Managers
                 search.PageSize = 10;
             }
             var students = _studentRepository.Records.Search(search.SearchValue);
+
             students = students.ApplySort(search.SortString, search.SortOrder);
 
             var SearchResult = new StudentSearchDto

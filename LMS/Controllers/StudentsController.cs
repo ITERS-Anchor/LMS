@@ -42,6 +42,10 @@ namespace LMS.Controllers
                 PageSize = pageSize
             };
             StudentSearchDto students = _studentManager.SearchStudents(searchCondition);
+            if (students.Students.Count==0)
+            {
+                return BadRequest("No such student");
+            }
             return Ok(students);
         }
 
@@ -77,7 +81,7 @@ namespace LMS.Controllers
         public IHttpActionResult EnrollCourse(int sid, int cid)
         {
             _studentManager.EnrollCourse(sid, cid);
-            return Ok();
+            return Ok($"You are enrolled in Course: {cid}");
         }
 
         [HttpDelete]
@@ -89,11 +93,10 @@ namespace LMS.Controllers
         }
 
         [HttpGet]
-        [Route("api/students/getwithDetails")]
+        [Route("api/students/getwithDetails/{id}")]
         public IHttpActionResult GetWithDetails(int id)
-        {
-            _studentManager.GetByIdWithDetail(id);
-            return Ok();
+        {           
+            return Ok(_studentManager.GetByIdWithDetail(id));
         }
     }
 }

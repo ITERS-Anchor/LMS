@@ -17,6 +17,8 @@ namespace LMS.Controllers
             _lecturerManager = lecturerManager;
         }
 
+        [HttpGet]
+        [Route("api/lecturers")]
         public IHttpActionResult Get()
         {
             return Ok(_lecturerManager.GetAll());
@@ -72,11 +74,10 @@ namespace LMS.Controllers
         }
 
         [HttpGet]
-        [Route("api/lecturers/getwithDetails")]
+        [Route("api/lecturers/getwithDetails/{id}")]
         public IHttpActionResult GetWithDetails(int id)
         {
-            _lecturerManager.GetByIdWithDetails(id);
-            return Ok();
+            return Ok(_lecturerManager.GetByIdWithDetails(id));
         }
     }
 }
