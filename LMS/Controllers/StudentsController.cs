@@ -19,18 +19,18 @@ namespace LMS.Controllers
         {
             _studentManager = studentManager;
         }
-        //[BasicAuthentication]
+        [HttpGet]
+        [Route("api/students/all")]
         public IHttpActionResult Get()
         {          
             return Ok(_studentManager.GetAll());
         }
+
         public IHttpActionResult GetStudentById(int id)
         {
             return Ok(_studentManager.GetById(id));
         }
-
-        [HttpGet]
-        [Route("api/students/search")]
+        
         public IHttpActionResult Get(string sortString = "id", string sortOrder = "asc", string searchValue = "", int pageSize = 10, int pageNumber = 1)//asc
         {
             SearchAttribute searchCondition = new SearchAttribute()
