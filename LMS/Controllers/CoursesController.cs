@@ -26,7 +26,12 @@ namespace LMS.Controllers
 
         public IHttpActionResult GetStudentById(int id)
         {
-            return Ok(_courseManager.GetById(id));
+            var course = _courseManager.GetById(id);
+            if (course==null)
+            {
+                return NotFound();
+            }
+            return Ok(course);
         }
 
         [HttpPost]

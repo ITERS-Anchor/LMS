@@ -10,7 +10,7 @@ using System.Web.Http;
 
 namespace LMS.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class TestsController : ApiController
     {
         private readonly IUserManager _userManager;
@@ -29,7 +29,7 @@ namespace LMS.Controllers
                 return Ok(students);
             }
         }
-       
+       [AllowAnonymous]
         [HttpPost]
         [Route("api/test/createuser")]
         public IHttpActionResult Post(UserRegisterDto user)

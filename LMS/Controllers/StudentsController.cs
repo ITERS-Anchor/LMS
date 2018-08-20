@@ -28,7 +28,12 @@ namespace LMS.Controllers
 
         public IHttpActionResult GetStudentById(int id)
         {
-            return Ok(_studentManager.GetById(id));
+            var stu = _studentManager.GetById(id);
+            if (stu==null)
+            {
+                return NotFound();
+            }
+            return Ok(stu);
         }
         
         public IHttpActionResult Get(string sortString = "id", string sortOrder = "asc", string searchValue = "", int pageSize = 10, int pageNumber = 1)//asc
@@ -44,7 +49,7 @@ namespace LMS.Controllers
             StudentSearchDto students = _studentManager.SearchStudents(searchCondition);
             if (students.Students.Count==0)
             {
-                return BadRequest("No such student");
+                return NotFound();
             }
             return Ok(students);
         }
@@ -95,8 +100,13 @@ namespace LMS.Controllers
         [HttpGet]
         [Route("api/students/getwithDetails/{id}")]
         public IHttpActionResult GetWithDetails(int id)
-        {           
-            return Ok(_studentManager.GetByIdWithDetail(id));
+        {
+            var stu = _studentManager.GetByIdWithDetail(id);
+            if (stu==null)
+            {
+                return NotFound();
+            }
+            return Ok(stu);
         }
     }
 }

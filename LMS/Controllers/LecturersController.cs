@@ -26,7 +26,12 @@ namespace LMS.Controllers
 
         public IHttpActionResult GetById(int id)
         {
-            return Ok(_lecturerManager.GetById(id));
+            var lecturer = _lecturerManager.GetById(id);
+            if (lecturer==null)
+            {
+                return NotFound();
+            }
+            return Ok(lecturer);
         }
 
         [HttpPost]
@@ -77,7 +82,12 @@ namespace LMS.Controllers
         [Route("api/lecturers/getwithDetails/{id}")]
         public IHttpActionResult GetWithDetails(int id)
         {
-            return Ok(_lecturerManager.GetByIdWithDetails(id));
+            var lecturer = _lecturerManager.GetByIdWithDetails(id);
+            if (lecturer == null)
+            {
+                return NotFound();
+            }
+            return Ok(lecturer);
         }
     }
 }
